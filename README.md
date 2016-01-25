@@ -35,11 +35,17 @@ cordova create imager com.yourname.imager Imager //creates directory "imager" wi
 
 cd imager
 
-git clone https://github.com/osalabs/demo-cordova-imager.git //put all content of repository www directory into imager/www
+rm -Rf www //remove default cordova app content
+
+git clone https://github.com/osalabs/demo-cordova-imager.git www/ //put all content of repository www directory into imager/www
 
 cordova plugin add cordova-plugin-camera //adds a camera plugin to app
 
 cordova platform add ios //add platform for ios, repeat for "android" or other platforms if necessary
 
 cordova build //build app, after that you may run it in XCode/emulator
+
+sudo npm install -g ios-sim //optional, install ios-sim, so you can use next command
+
+cordova run ios //if ios-sim installed as above you may run app in simulator directly from command line
 ```
